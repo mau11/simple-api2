@@ -1,22 +1,28 @@
-# 📊 Project: Simple API 2
+# MBTA Alerts API
 
-### Goal: Display data returned from an api
+> View the MBTA's active alerts for all modes of transit.
 
-### How to submit your code for review:
+> <img src="./images/screenshot.png" alt="Screenshot of completed MBTA Alerts API App" width="500">
 
-- Fork and clone this repo
-- Create a new branch called answer
-- Checkout answer branch
-- Push to your fork
-- Issue a pull request
-- Your pull request description should contain the following:
-  - (1 to 5 no 3) I completed the challenge
-  - (1 to 5 no 3) I feel good about my code
-  - Anything specific on which you want feedback!
+## Table of Contents
 
-Example:
-```
-I completed the challenge: 5
-I feel good about my code: 4
-I'm not sure if my constructors are setup cleanly...
-```
+1. [Tech Stack](#tech-stack)
+1. [Development](#development)
+   1. [MBTA API](#mbta-api)
+   1. [Notes](#notes)
+
+## Tech Stack
+
+- **HTML**
+- **CSS**
+- **JavaScript**
+
+## Development
+
+### MBTA API
+
+- No API key required. Open the app in your browser and instantly see active MBTA alerts!
+
+### Notes
+
+Visit the official documentation at https://www.mbta.com/developers/v3-api and https://api-v3.mbta.com/docs/swagger/index.html#/Alert/ApiWeb_AlertController_index for more information on API use, copyright, and rate limitations.

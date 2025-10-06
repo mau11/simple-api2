@@ -1,6 +1,4 @@
-const MBTA_KEY = ""; // ADD KEY
-
-const url = "https://api-v3.mbta.com/alerts";
+const url = "https://api-v3.mbta.com/alerts?sort=-updated_at";
 
 fetch(url)
   .then((res) => res.json())
@@ -60,7 +58,7 @@ fetch(url)
     //         lifecycle: "ONGOING",
     //         service_effect: "Bowdoin escalator unavailable",
     //         severity: 3,
-    //         short_header:
+    //         header:
     //           "Bowdoin Escalator 125 (Lobby to street) is unavailable until further notice.",
     //         timeframe: "ongoing",
     //         updated_at: "2023-06-13T10:12:06-04:00",
@@ -795,26 +793,19 @@ fetch(url)
 
     const ul = document.createElement("ul");
     data.data.forEach((alert) => {
-      const {
-        active_period,
-        cause,
-        description,
-        service_effect,
-        severity,
-        short_header,
-        updated_at,
-      } = alert.attributes;
+      const { description, header, service_effect, updated_at } =
+        alert.attributes;
       const li = document.createElement("li");
-      const status = active_period.end ? "inactive" : "active";
 
       li.innerHTML = `
-        <p>${short_header}</p>
-        <p>${status}</p>
-        <p>${cause}</p>
-        <p>Effect: ${service_effect}</p>
-        <p>${severity}</p>
-        <p>${description}</p>
-        <p>Last updated: ${updated_at}</p>
+        <h3>${header}</h3>
+        <p>
+          Effect: ${service_effect}
+          <span>
+            (last updated: ${new Date(updated_at).toLocaleDateString()})
+          </span>
+        </p>
+        <p>${description ?? ""}</p>
       `;
       ul.appendChild(li);
     });
